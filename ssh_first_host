@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ $# != 3 ]]
+then
+	echo "Expects three arguments: $0 format start end"
+	exit 1
+fi
+
+hosts=`python -c "print(' '.join(['$1' % num for num in range($2, $3+1)]))"`
+
+for host in $hosts
+do
+	ssh -o ConnectTimeout=1 -X -C $USER@$host
+	if [[ "$?" != "255" ]]
+	then
+		echo "Connection exited"
+		break
+	fi
+done

@@ -1,0 +1,2 @@
+#!/bin/bash
+./ssh_first_host 'cse270pc-%02d' 01 80

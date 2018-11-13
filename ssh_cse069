@@ -1,0 +1,2 @@
+#!/bin/bash
+./ssh_first_host cse069pc-%02d 01 56

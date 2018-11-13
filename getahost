@@ -1,0 +1,46 @@
+#!/bin/bash
+
+while true
+	do
+	echo "Please select host range:"
+	echo ""
+	echo "1) CSE/069"
+	echo "2) CSE/070"
+	echo "3) CSE/168"
+	echo "4) CSE/169"
+	echo "5) CSE/270"
+	echo "6) (exit)"
+	echo ""
+	echo -n "Select a number > "
+	read range
+	if [[ $range -eq "1" ]]
+	then
+		./ssh_cse069
+		exit 0
+	fi
+	if [[ $range -eq "2" ]]
+	then
+		./ssh_cse070
+		exit 0
+	fi
+	if [[ $range -eq "3" ]]
+	then
+		./ssh_cse168
+		exit 0
+	fi
+	if [[ $range -eq "4" ]]
+	then
+		./ssh_cse169
+		exit 0
+	fi
+	if [[ $range -eq "5" ]]
+	then
+		./ssh_cse270
+		exit 0
+	fi
+	if [[ $range -eq "6" ]]
+	then
+		echo "Exit"
+		exit 0
+	fi
+done
